@@ -43,18 +43,22 @@
         </activity>
         <activity
             android:name=".view.ServiceStarter"
-            android:label="@string/title_activity_service_starter"></activity>
-        <activity android:name=".view.LifecycleActivity">
-        </activity>
+            android:label="@string/title_activity_service_starter" />
+        <activity android:name=".view.LifecycleActivity"></activity>
         <activity
             android:name=".view.LocalActivity"
             android:label="@string/title_activity_local">
+
+        </activity>
+        <activity android:name=".contentprovider.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider android:name=".contentprovider.StudentsProvider"
+            android:authorities="com.example.MyApplication.StudentsProvider"/>
+
     </application>
 
 </manifest>
