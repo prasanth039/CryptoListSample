@@ -21,6 +21,10 @@
             android:name=".service.SampleBackgroundService"
             android:exported="false" />
 
+        <service
+            android:name=".service.AidlService"
+            android:exported="false" />
+
         <activity android:name=".view.CryptoListActivity">
 
             <!-- <intent-filter> -->
@@ -43,7 +47,13 @@
         </activity>
         <activity
             android:name=".view.ServiceStarter"
-            android:label="@string/title_activity_service_starter" />
+            android:label="@string/title_activity_service_starter" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".view.LifecycleActivity"></activity>
         <activity
             android:name=".view.LocalActivity"
@@ -51,10 +61,6 @@
 
         </activity>
         <activity android:name=".contentprovider.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <provider android:name=".contentprovider.NoteProvider"
             android:authorities="com.example.MyApplication.NoteProvider"/>
