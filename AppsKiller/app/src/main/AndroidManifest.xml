@@ -46,7 +46,7 @@
         </activity>
         <activity
             android:name=".service.ServiceStarter"
-            android:label="@string/title_activity_service_starter"></activity>
+            android:label="@string/title_activity_service_starter" />
         <activity android:name=".view.LifecycleActivity" />
         <activity
             android:name=".view.LocalActivity"
@@ -57,23 +57,26 @@
             android:name=".contentprovider.NoteProvider"
             android:authorities="com.example.MyApplication.NoteProvider" />
 
-        <activity android:name=".service.AidlStarter">
-        </activity>
+        <activity android:name=".service.AidlStarter"></activity>
         <activity android:name=".sharedmemory.SharedActivity">
+
+        </activity>
+
+        <service
+            android:name=".sharedmemory.server.ShmService"
+            android:exported="true"></service>
+
+        <activity android:name=".service.MessengerStartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <service
-            android:name=".sharedmemory.server.ShmService"
-            android:exported="true">
-
-
-        </service>
-
+            android:name=".service.MessengerService"
+            android:exported="true"
+            android:process=":test" />
     </application>
 
 </manifest>
