@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,9 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCECTp39dgYysGFZRm2y3IAj9pU2dOCnn8" />
+            android:value="AIzaSyAyoGpIxZZfhaWwt2MudObDSPzThOASGoo" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
 
         <service
             android:name=".service.SampleBackgroundService"
@@ -24,26 +28,10 @@
             android:name=".service.AidlService"
             android:exported="true" />
 
-        <activity android:name=".view.CryptoListActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".view.CryptoListActivity"></activity>
         <activity
             android:name=".view.AutoCompleteActivity"
-            android:label="@string/title_activity_auto_complete">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:label="@string/title_activity_auto_complete"></activity>
         <activity
             android:name=".service.ServiceStarter"
             android:label="@string/title_activity_service_starter" />
@@ -57,26 +45,27 @@
             android:name=".contentprovider.NoteProvider"
             android:authorities="com.example.MyApplication.NoteProvider" />
 
-        <activity android:name=".service.AidlStarter"></activity>
-        <activity android:name=".sharedmemory.SharedActivity">
-
-        </activity>
+        <activity android:name=".service.AidlStarter" />
+        <activity android:name=".sharedmemory.SharedActivity"></activity>
 
         <service
             android:name=".sharedmemory.server.ShmService"
-            android:exported="true"></service>
+            android:exported="true" />
 
-        <activity android:name=".service.MessengerStartActivity">
+        <activity android:name=".service.MessengerStartActivity"></activity>
+
+        <service
+            android:name=".service.MessengerService"
+            android:exported="true"
+            android:process=":test" />
+
+        <activity android:name=".map.MapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name=".service.MessengerService"
-            android:exported="true"
-            android:process=":test" />
     </application>
 
 </manifest>
