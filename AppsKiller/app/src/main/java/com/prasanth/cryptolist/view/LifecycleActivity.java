@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.prasanth.cryptolist.R;
-import com.prasanth.cryptolist.service.SampleReceiver;
+import com.prasanth.cryptolist.reciever.SampleReceiver;
 
 public class LifecycleActivity extends AppCompatActivity {
     String msg = "Android : ";
